@@ -5,6 +5,7 @@
 // * TODO:
 // *    serial_config(): implementacao para outrs clk e bps
 // *    serial_read_bytes()
+// *    configuracao por diretivas do compilador
 // *
 
 #include <stdint.h>
