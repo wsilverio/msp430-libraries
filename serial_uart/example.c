@@ -1,11 +1,10 @@
 #include <msp430.h>
-#include <stdint.h>
-#include <stdlib.h>
+#include <stdlib.h> // itoa
 
 #include "serial_uart.h"
 
 int main(){
-    WDTCTL = WDTPW + WDTHOLD;
+    WDTCTL = WDTPW | WDTHOLD;
 
     if (0xFF == CALBC1_16MHZ){
         while(1);
@@ -15,7 +14,7 @@ int main(){
     BCSCTL1 = CALBC1_16MHZ;
     DCOCTL = CALDCO_16MHZ;
 
-    serial_config(16000000, 9600);
+    serial_config();
 
     serial_print_string("ASCII TABLE:\n");
 
